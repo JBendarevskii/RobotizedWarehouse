@@ -17,7 +17,6 @@ public class Robot implements Observer, StorageManager {
         }
     }
 
-    // Обробка замовлення на вилучення
     private void processPurchaseOrder(Order order) {
         for (Item item : order.getItems()) {
             takeFromStorage(item);
@@ -26,8 +25,7 @@ public class Robot implements Observer, StorageManager {
             }
         }
     }
-
-    // Обробка замовлення на поповнення
+    
     private void processRestockOrder(Order order) {
         for (Item item : order.getItems()) {
             addToStorage(item);
